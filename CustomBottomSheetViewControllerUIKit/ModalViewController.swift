@@ -28,10 +28,10 @@ class ModalViewController: UIViewController {
     var containerViewBottomConstraint: NSLayoutConstraint?
 
     let maxDimmedAlpha: CGFloat = 0.5
-    let defaultHeight: CGFloat = 300
-    let dismissHeight: CGFloat = 200
+    let defaultHeight: CGFloat = UIScreen.main.bounds.height / 3
+    let dismissHeight: CGFloat = UIScreen.main.bounds.height / 4
     let maximumContainerHeight: CGFloat = UIScreen.main.bounds.height - 40
-    var currentContainerHeight: CGFloat = 300
+    var currentContainerHeight: CGFloat = UIScreen.main.bounds.height / 3
     
     override func viewDidLoad() {
         super.viewDidLoad()
