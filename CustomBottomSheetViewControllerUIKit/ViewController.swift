@@ -44,21 +44,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        setup(containerStackView)
         setupConstraints()
     }
-    
-    private func setup(_ subViews: UIView...) {
-        subViews.forEach { subView in
-            view.addSubview(subView)
-        }
-    }
-    
+
     private func setupView() {
         view.backgroundColor = .systemBackground
     }
     
     private func setupConstraints() {
+        view.addSubview(containerStackView)
         containerStackView.translatesAutoresizingMaskIntoConstraints = false
         
         let safeArea = view.safeAreaLayoutGuide
@@ -73,7 +67,10 @@ class ViewController: UIViewController {
     }
     
     @objc func presentModalController() {
+        let modalVC = ModalViewController()
+        modalVC.modalPresentationStyle = .overCurrentContext
         
+        present(modalVC, animated: false)
     }
 }
 
