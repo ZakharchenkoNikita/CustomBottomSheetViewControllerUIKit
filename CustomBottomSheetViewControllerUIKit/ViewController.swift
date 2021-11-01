@@ -30,6 +30,7 @@ class ViewController: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .tintColor
         button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(presentModalController), for: .touchUpInside)
         return button
     }()
     
@@ -69,6 +70,10 @@ class ViewController: UIViewController {
             containerStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -20),
             infoButton.heightAnchor.constraint(equalToConstant: 50)
         ])
+    }
+    
+    @objc func presentModalController() {
+        
     }
 }
 
